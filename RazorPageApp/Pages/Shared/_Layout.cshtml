@@ -1,0 +1,52 @@
+﻿<!-- Läser in DateTime -->
+@{
+    var dateAndTime = DateTime.Now;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData ["Title"] - </title>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">Moment 1</h1>
+            <p>@dateAndTime</p>
+
+            <div id="navButton">
+                <div class="burger"></div>
+                <div class="burger"></div>
+                <div class="burger"></div>
+            </div>
+            <nav id="hiddenNav">
+                <ul>
+                    <li><a href="/">Start</a></li>
+                    <li><a href="/Razor">Razor</a></li>
+                    <li><a href="/About">Om mig</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <nav class="mainNav">
+            <ul>
+                <li><a href="/">Start</a></li>
+                <li><a href="/Razor">Razor</a></li>
+                <li><a href="/About">Om mig</a></li>
+            </ul>
+        </nav>
+        <main>
+            @RenderBody()
+        </main>
+
+        <footer>
+            <p>Hillevi Annfält, Mittuniversitetet Webbutveckling 120 HP</p>
+        </footer>
+
+    </div>
+    <script src="~/js/main.js"></script>
+</body>
+
+</html>

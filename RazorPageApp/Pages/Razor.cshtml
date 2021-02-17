@@ -1,0 +1,34 @@
+﻿@page
+@model RazorPageApp.Pages.CoursesModel
+@{
+
+    ViewData["Title"] = "Razor";
+
+    //Hittar veckodag
+    DayOfWeek today = DateTime.Today.DayOfWeek;
+
+    //String med kurser
+    string[] courses = { "DT057G, Webbutveckling I", "DT084G, Introduktion till programmering i JavaScript", "GD008G, Typografi och form för webb", "DT163G, Bildbehandling för webb", "DT003G, Databaser", "DT193G, Webbutveckling II", "DT152G, Webbdesign med CMS", "DT162G, JavaScriptbaserad webbutveckling" };
+
+}
+<h3>Kurser som jag läst</h3>
+<ul>
+    @{
+        foreach (var course in courses)
+        {
+            <li>@course</li>
+        }
+    }
+</ul>
+
+<h3>Bra att veta: </h3>
+@{
+    if (today == DayOfWeek.Monday)
+    {
+        <p>Idag är det månadg</p>
+    }
+    else
+    {
+        <p>Idag är det inte måndag</p>
+    }
+}
